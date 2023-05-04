@@ -238,10 +238,8 @@ def wardial(hosts, **kwargs):
     # Ensure that all of the kwargs parameters get passed to `_wardial_async`.
     # You will have to do some post-processing of the results of this function to convert the output.
     host = list(hosts)
-    print("host=", host)
     loop = asyncio.new_event_loop()
     results = loop.run_until_complete(_wardial_async(host))
-    print("results=", results)
     wr = []
     for elem in range(len(results)):
         if results[elem] == True:
